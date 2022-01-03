@@ -1,4 +1,4 @@
-package org.exist.package.mail;
+package org.exist.library.mail;
 
 import org.exist.dom.QName;
 import org.exist.xquery.*;
@@ -14,22 +14,22 @@ import static org.exist.xquery.FunctionDSL.functionDefs;
  * A very simple example XQuery Library Module implemented
  * in Java.
  */
-public class ExampleModule extends AbstractInternalModule {
+public class MailModule extends AbstractInternalModule {
 
-    public static final String NAMESPACE_URI = "https://my-organisation.com/exist-db/ns/app/my-java-module";
-    public static final String PREFIX = "myjmod";
-    public static final String RELEASED_IN_VERSION = "eXist-3.6.0";
+    public static final String NAMESPACE_URI = "https://exist-db.org/xquery/mail-new";
+    public static final String PREFIX = "mail";
+    public static final String RELEASED_IN_VERSION = "eXist-5.3.1";
 
     // register the functions of the module
     public static final FunctionDef[] functions = functionDefs(
-        functionDefs(ExampleFunctions.class,
-                ExampleFunctions.FS_HELLO_WORLD,
-                ExampleFunctions.FS_SAY_HELLO,
-                ExampleFunctions.FS_ADD
+        functionDefs(MailFunctions.class,
+                MailFunctions.FS_HELLO_WORLD,
+                MailFunctions.FS_SAY_HELLO,
+                MailFunctions.FS_ADD
         )
     );
 
-    public ExampleModule(final Map<String, List<? extends Object>> parameters) {
+    public MailModule(final Map<String, List<? extends Object>> parameters) {
         super(functions, parameters);
     }
 
@@ -45,7 +45,7 @@ public class ExampleModule extends AbstractInternalModule {
 
     @Override
     public String getDescription() {
-        return "Example Module for eXist-db XQuery";
+        return "Mail Module for eXist-db XQuery";
     }
 
     @Override

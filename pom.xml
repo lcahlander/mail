@@ -15,13 +15,13 @@
     <artifactId>mail</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Example App</name>
-    <description>Example App for eXist-db</description>
-    <url>https://my-organisation.com/exist-db/app</url>
+    <name>Mail Library</name>
+    <description>Mail Library for eXist-db</description>
+    <url>https://exist-db.org/exist-db/mail</url>
 
     <organization>
-        <name>My Organisation</name>
-        <url>http://my-organisation.com</url>
+        <name>eXist-db</name>
+        <url>http://exist-db.org</url>
     </organization>
 
     <licenses>
@@ -33,14 +33,14 @@
     </licenses>
 
     <scm>
-        <url>https://www.github.com/my-organisation/example-exist-app.git</url>
-        <connection>scm:git:https://www.github.com/my-organisation/example-exist-app.git</connection>
-        <developerConnection>scm:git:https://www.github.com/my-organisation/example-exist-app.git</developerConnection>
+        <url>https://www.github.com/eXist-db/mail.git</url>
+        <connection>scm:git:https://www.github.com/eXist-db/mail.git</connection>
+        <developerConnection>scm:git:https://www.github.com/eXist-db/mail.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://www.github.com/my-organisation/example-exist-app/issues</url>
+        <url>https://www.github.com/eXist-db/mail/issues</url>
     </issueManagement>
 
     <properties>
@@ -48,13 +48,14 @@
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
 
-        <exist.version>5.0.0</exist.version>
+        <exist.version>5.3.1</exist.version>
 
         <!-- used in the EXPath Package Descriptor -->
-        <package-name>https://my-organisation.com/exist-db/app</package-name>
+        <package-name>https://exist-db.org/exist-db/mail</package-name>
 
-        <example.module.namespace>https://my-organisation.com/exist-db/ns/app/my-java-module</example.module.namespace>
-        <example.module.java.classname>ExampleModule</example.module.java.classname>
+        <mail.module.namespace>https://exist-db.org/xquery/mail-new</mail.module.namespace>
+        <mail.module.java.classname>MailModule</mail.module.java.classname>
+        <mail.version>1.5.0-b01</mail.version>
     </properties>
 
     <dependencies>
@@ -62,6 +63,11 @@
             <groupId>org.exist-db</groupId>
             <artifactId>exist-core</artifactId>
             <version>${exist.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${mail.version}</version>
         </dependency>
 
         <!-- test dependencies -->
@@ -182,7 +188,7 @@
     <repositories>
         <repository>
             <id>exist-db</id>
-            <url>http://repo.evolvedbinary.com/repository/exist-db/</url>
+            <url>https://repo.evolvedbinary.com/repository/exist-db/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -192,7 +198,7 @@
         </repository>
         <repository>
             <id>exist-db-snapshots</id>
-            <url>http://repo.evolvedbinary.com/repository/exist-db-snapshots/</url>
+            <url>https://repo.evolvedbinary.com/repository/exist-db-snapshots/</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -205,7 +211,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>clojars.org</id>
-            <url>http://clojars.org/repo</url>
+            <url>https://clojars.org/repo</url>
         </pluginRepository>
     </pluginRepositories>
 </project>
